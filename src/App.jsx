@@ -7,7 +7,8 @@ import SelectedProeject from "./component/SelectedProject.jsx"
 function App() {
   const [projectState ,setProjectState] = useState({
     selectedProjectId : undefined,
-    projects : []
+    projects : [],
+    tasks :[]
   });
 
   function handleStartAddProjects(){
@@ -62,9 +63,35 @@ function App() {
     })
   }
 
+  function handleAddTask(text){
+    setProjectState((prevState)=>{
+      const TaskId =  Math.random()
+      const newTask = {
+        text: text,
+        projectId: prevState.selectedProjectId,
+        id :TaskId
+      }
+      return {
+        ...prevState,
+        tasks : [...prevState.tasks ,newTask]
+      }
+    })
+  }
+
+  function handleDeleteTask(id){
+    setProjectState((prevState) =>{
+      return{
+      ...prevState,
+      tasks : prevState.tasks.filter((task)=>task.id !== id)
+      }
+    })
+  }
+
   let selectedProject = projectState.projects.find(project => project.id === projectState.selectedProjectId) 
 
-  let content = <SelectedProeject project={selectedProject} onDelete={handleDelete}/>;
+  let content = <SelectedProeject project={selectedProject} onDelete={handleDelete} onAddTask={handleAddTask} onDeleteTask={handleDeleteTask}
+  tasks={projectState.tasks}
+  />;
 
   if(projectState.selectedProjectId === null){
     content = <NewProject onAdd={handleAddProject} onCancel={handleCancelAddProject}/>
@@ -73,7 +100,7 @@ function App() {
   }
   return (
     <main className="h-screen my-8 flex gap-8">
-      <ProjectSideBar onSelectProject={handleSelectProject} onStartAddProjects={handleStartAddProjects} projects={projectState.projects} />
+      <ProjectSideBar selectedProjectId={projectState.selectedProjectId} onSelectProject={handleSelectProject} onStartAddProjects={handleStartAddProjects} projects={projectState.projects} />
       {content}
     </main>
   );
