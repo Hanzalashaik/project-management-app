@@ -11,6 +11,16 @@ This Project Management Web App is designed to help users organize their project
 <b>5.Portals</b>: Enhanced rendering capabilities using portals for modals or pop-up components.<br>
 <b>4.Tailwind CSS Styling</b>: Styled using Tailwind CSS for a modern and responsive user interface.<br>
 
+## Screenshoots
+<b>1.Landing Page</b>
+
+![Image](https://github.com/Hanzalashaik/project-management-app/blob/main/public/project%20landing%20page.png "Image")
+
+<b>2.Adding Task</b>
+
+![Image](https://github.com/Hanzalashaik/project-management-app/blob/main/public/project%20page.png "Image")
+
+
 ## Installation
 
 To run this Project Management Web App locally, follow these steps:
