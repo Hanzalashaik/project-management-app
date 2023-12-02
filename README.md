@@ -27,7 +27,7 @@ To run this Project Management Web App locally, follow these steps:
 
 ```bash
 git clone git@github.com:Hanzalashaik/project-management-app.git
-cd quiz-app
+cd project-management-app
 npm install
 ```
 
