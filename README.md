@@ -26,11 +26,17 @@ This Project Management Web App is designed to help users organize their project
 To run this Project Management Web App locally, follow these steps:
 
 ```bash
-git clone git@github.com:Hanzalashaik/quiz-app.git
+git clone git@github.com:Hanzalashaik/project-management-app.git
 cd quiz-app
 npm install
-npm start
 ```
+
+To start app
+
+```bash
+npm run dev
+```
+
 ## Technologies Used
 <b>1.React</b>: JavaScript library for building user interfaces.<br>
 <b>2.React Refs</b>: Utilized for DOM manipulation, especially in scenarios like adding/removing projects and tasks.<br>
